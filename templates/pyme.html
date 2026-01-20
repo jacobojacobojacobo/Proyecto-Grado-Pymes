@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- ===== INFO DE LA PYME ===== -->
+<h1 class="pyme_nombre">{{ pyme.nombre }}</h1>
+<p class="pyme_descripcion">{{ pyme.descripcion }}</p>
+<p class="pyme_categoria">Categoría: {{ pyme.categoria }}</p>
+
+<!-- ===== PRODUCTOS ===== -->
+<div class="container my-4">
+
+  <h4 class="mb-3">Productos disponibles</h4>
+
+  <div class="row g-3">
+
+    {% for producto in productos %}
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 shadow-sm">
+
+        <img
+          src="{{ producto.img }}"
+          class="card-img-top"
+          alt="{{ producto.nombre }}">
+
+        <div class="card-body">
+          <h6 class="card-title mb-1">
+            {{ producto.nombre }}
+          </h6>
+
+          <p class="card-text text-muted small mb-2">
+            {{ producto.descripcion }}
+          </p>
+
+          <strong class="text-success">
+            ${{ producto.precio }}
+          </strong>
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<div class="text-light-large">
+  ¡Descubre los productos disponibles!
+</div>
+
+<div class="productos-mensaje">
+    <hr>
+    <p>¿No encuentras lo que buscas? Pronto habrá más productos de pymes locales.</p>
+</div>
+
+{% endblock %}

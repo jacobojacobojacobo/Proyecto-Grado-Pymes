@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="col-12">
+  <div class="pymes-grid">
+    {% for pyme in pymes %}
+      <div class="producto">
+        <h3>{{ pyme.nombre }}</h3>
+        <p>{{ pyme.descripcion }}</p>
+
+        <a href="{{ url_for('pyme', pyme_id=pyme.id) }}">Ver pyme</a>
+
+        <hr>
+        <p class="mensaje">Apoya el comercio local</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

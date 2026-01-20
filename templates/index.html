@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+<!-- Cuerpo superior -->
+{% block banner %}
+
+<div class="text-light-long d-flex align-items-center">
+    <!-- Texto -->
+   <div class="banner">
+    <div class="banner-text">
+        Pequeñas compras, grandes cambios
+    </div>
+    <div class="subtitulo"><a href="#ref_1">
+        Explora los productos en venta
+    </a>
+    </div>
+    
+</div>
+
+    <!-- Imagen -->
+    <div class="banner-image">
+        <img src="https://media.istockphoto.com/id/913241794/es/vector/tienda-verde-icono-ambiental-de-dise%C3%B1o-plano.jpg?s=612x612&w=0&k=20&c=XRekoObLnBMzyTX-kx0XU55ol1S-5ej_JlP-ED988vc=" alt="Banner Imagen">
+    </div>
+</div>
+
+<div class="text-light-large" id="ref_1">
+    A continuación puedes navegar los productos y promociones de las Pymes asociadas
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <h1 class="titulo">
+        Promociones
+    </h1>
+</div>
+
+<!-- Promo -->
+<div class="promo-grid">
+
+<div class="promo-card">
+    <a href="promo">
+    <img src="https://www.gerencie.com/wp-content/uploads/tratamiento-descuentos-comerciales.png" alt="Producto #1">
+    </a>    
+    <p>Promo #1</p>
+</div>
+
+<div class="promo-card long">
+    <a href="promo">
+    <img src="https://www.gerencie.com/wp-content/uploads/tratamiento-descuentos-comerciales.png" alt="Producto #1">
+    </a>    
+    <p>Promo #2</p>
+</div>
+
+<div class="promo-card long">
+    <a href="promo">
+    <img src="https://www.gerencie.com/wp-content/uploads/tratamiento-descuentos-comerciales.png" alt="Producto #1">
+    </a>    
+    <p>Promo #3</p>
+</div>
+
+<div class="promo-card long">
+    <a href="promo">
+    <img src="https://www.gerencie.com/wp-content/uploads/tratamiento-descuentos-comerciales.png" alt="Producto #1">
+    </a>    
+    <p>Promo #4</p>
+</div>
+
+
+</div>
+
+<div>
+    <h1 class="titulo">
+        Productos
+    </h1>
+</div>
+
+<!-- Productos -->
+<div class="product-grid">
+
+    <div class="product-card">
+        <a href="pyme/1">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pan_de_aceite_y_pan_redondo.jpg/960px-Pan_de_aceite_y_pan_redondo.jpg" alt="Producto #1">
+        </a><p>Producto #1</p>
+    </div>
+
+    <div class="product-card">
+        <a href="pyme/2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Ou%C4%83.jpg/330px-Ou%C4%83.jpg" alt="Producto #2">
+        </a><p>Producto #2</p>
+    </div>
+
+    <div class="product-card">
+        <a href="pyme/3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Fast_food_hamburger_from_Sonic_Drive-In.jpg/250px-Fast_food_hamburger_from_Sonic_Drive-In.jpg" alt="Producto #3">
+        </a><p>Producto #3</p>
+    </div>
+
+    <div class="product-card">
+        <a href="pyme/4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Arroz_con_leche_argentino.jpg" alt="Producto #4">
+        </a><p>Producto #4</p>
+    </div>
+
+</div>
+
+
+<!-- Mensaje inferior -->
+<div class="productos-mensaje">
+    <hr>
+    <p>¿No encuentras lo que buscas? Pronto habrá más productos de pymes locales.</p>
+</div>
+
+
+{% endblock %}
+
