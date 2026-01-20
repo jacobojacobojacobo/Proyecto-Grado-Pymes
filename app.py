@@ -89,10 +89,13 @@ def pyme(pyme_id):
     abort(404)
 
 
-# Iniciar base de datos y correr servidor
+# Conectar y crear tabla al iniciar la app
+conn, cursor = conectar_db()
+conn.close()
+
+# Solo para correr localmente
 if __name__ == "__main__":
-    # Conectar y cerrar para crear la tabla
-    conn, cursor = conectar_db()
-    conn.close()
+    app.run(debug=True)
+
     
     app.run(debug=True)
