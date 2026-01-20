@@ -38,34 +38,43 @@ from flask import session
 import psycopg2
 import os
 
+from datetime import datetime, timedelta
+import psycopg2
+import os
+from flask import session
+
 def guardar_ingreso(pagina="index"):
     ahora = datetime.now()
 
-    # Asegurar que tenemos un diccionario
+    # Inicializar diccionario si no existe
     if "ultima_visita" not in session or not isinstance(session["ultima_visita"], dict):
         session["ultima_visita"] = {}
 
-    # Evitar duplicados por página (5 minutos)
-    if pagina in session["ultima_visita"]:
-        ultima = datetime.fromisoformat(session["ultima_visita"][pagina])
-        if ahora - ultima < timedelta(minutes=5):
-            return
+    ultima_visita = session["ultima_visita"].get(pagina)
 
-    # Guardar la hora de esta página
+    # Evitar duplicados: si la última visita fue hace menos de 5 minutos, salir
+    if ultima_visita:
+        ultima = datetime.fromisoformat(ultima_visita)
+        if ahora - ultima < timedelta(minutes=5):
+            return  # No registrar aún
+
+    # Guardar hora actual para esta página en la sesión
     session["ultima_visita"][pagina] = ahora.isoformat()
 
     # Guardar en la DB
-    conn = psycopg2.connect(os.getenv("DATABASE_URL"))
-    cursor = conn.cursor()
-    cursor.execute(
-        "INSERT INTO registros (fecha, pagina) VALUES (%s, %s)",
-        (ahora, pagina)
-    )
-    conn.commit()
-    conn.close()
-    
-    # Guardar el momento del registro en la sesión
-    session["ultima_visita"] = ahora.isoformat()
+    try:
+        conn = psycopg2.connect(os.getenv("DATABASE_URL"))
+        cursor = conn.cursor()
+        cursor.execute(
+            "INSERT INTO registros (fecha, pagina) VALUES (%s, %s)",
+            (ahora, pagina)
+        )
+        conn.commit()
+    except Exception as e:
+        print("Error guardando ingreso:", e)
+    finally:
+        if conn:
+            conn.close()
 
 # Rutas
 @app.route("/")
