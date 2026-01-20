@@ -41,30 +41,29 @@ import os
 def guardar_ingreso(pagina="index"):
     ahora = datetime.now()
 
-    # Usamos un diccionario en sesión para cada página
+    # Creamos el diccionario si no existe
     if "ultima_visita" not in session:
         session["ultima_visita"] = {}
 
-    # 1️⃣ Evitar duplicados por página (5 minutos)
+    # Evitar duplicados por página (5 minutos)
     if pagina in session["ultima_visita"]:
         ultima = datetime.fromisoformat(session["ultima_visita"][pagina])
         if ahora - ultima < timedelta(minutes=5):
             return
 
-    # 2️⃣ Guardar nueva marca de tiempo para esta página
+    # Guardamos la hora de esta página
     session["ultima_visita"][pagina] = ahora.isoformat()
 
-    # 3️⃣ Conexión a Neon (PostgreSQL)
+    # Guardar en la DB
     conn = psycopg2.connect(os.getenv("DATABASE_URL"))
     cursor = conn.cursor()
-
     cursor.execute(
         "INSERT INTO registros (fecha, pagina) VALUES (%s, %s)",
         (ahora, pagina)
     )
-
     conn.commit()
     conn.close()
+
 
     
     # Guardar el momento del registro en la sesión
