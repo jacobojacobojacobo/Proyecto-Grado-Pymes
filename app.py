@@ -41,8 +41,8 @@ import os
 def guardar_ingreso(pagina="index"):
     ahora = datetime.now()
 
-    # Creamos el diccionario si no existe
-    if "ultima_visita" not in session:
+    # Asegurar que tenemos un diccionario
+    if "ultima_visita" not in session or not isinstance(session["ultima_visita"], dict):
         session["ultima_visita"] = {}
 
     # Evitar duplicados por página (5 minutos)
@@ -51,7 +51,7 @@ def guardar_ingreso(pagina="index"):
         if ahora - ultima < timedelta(minutes=5):
             return
 
-    # Guardamos la hora de esta página
+    # Guardar la hora de esta página
     session["ultima_visita"][pagina] = ahora.isoformat()
 
     # Guardar en la DB
@@ -63,8 +63,6 @@ def guardar_ingreso(pagina="index"):
     )
     conn.commit()
     conn.close()
-
-
     
     # Guardar el momento del registro en la sesión
     session["ultima_visita"] = ahora.isoformat()
