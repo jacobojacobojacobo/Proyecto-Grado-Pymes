@@ -459,8 +459,25 @@ body {
     .subtitulo a {
         margin-bottom: 10px;
         padding-right: 10;
-        padding-left: 0;
-        margin-left: auto;
     }
 
+    .product-grid {
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .product-card {
+        width: 90%;
+        max-width: 360px;
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+
+    .product-card p {
+        font-size: 0.9rem;
+    }
 }
