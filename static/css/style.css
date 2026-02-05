@@ -459,6 +459,8 @@ body {
     .subtitulo a {
         margin-bottom: 10px;
         padding-right: 10;
+        padding-left: 0;
+        margin-left: auto;
     }
 
 }
