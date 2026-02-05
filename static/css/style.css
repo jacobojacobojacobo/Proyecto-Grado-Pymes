@@ -417,6 +417,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    .banner-image {
+        margin-top: 12px;
+    }
 
     .promo-grid {
         flex-wrap: wrap;
@@ -434,5 +437,20 @@ body {
 
     .promo-card p {
         font-size: 1rem;
+    }
+
+    .banner-text {
+        width: 100%;
+        padding: 16px;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .banner-image {
+        width: 100%;
+    }
+
+    .banner-image img {
+        height: auto;
     }
 }
