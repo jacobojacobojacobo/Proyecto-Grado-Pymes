@@ -415,3 +415,24 @@ body {
 .data-details ul {
     margin: 5px 0 0 20px;
 }
+
+@media (max-width: 768px) {
+
+    .promo-grid {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .promo-card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .promo-card img {
+        height: 200px;
+    }
+
+    .promo-card p {
+        font-size: 1rem;
+    }
+}
