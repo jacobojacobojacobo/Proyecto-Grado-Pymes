@@ -441,7 +441,6 @@ body {
 
     .banner-text {
         width: 100%;
-        padding: 16px;
         font-size: 1.6rem;
         text-align: center;
     }
@@ -453,4 +452,9 @@ body {
     .banner-image img {
         height: auto;
     }
+
+    .subtitulo a {
+        margin-bottom: 10px;
+    }
+
 }
