@@ -417,6 +417,10 @@ body {
 }
 
 @media (max-width: 768px) {
+
+    .banner {
+        padding-left: 0%;
+    }
     .banner-image {
         margin-top: 12px;
     }
