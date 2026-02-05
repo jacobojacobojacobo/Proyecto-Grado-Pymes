@@ -447,7 +447,7 @@ body {
     }
 
     .banner-image {
-        width: 100%;
+        display: none;
     }
 
     .banner-image img {
