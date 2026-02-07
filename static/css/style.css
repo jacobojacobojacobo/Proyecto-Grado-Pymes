@@ -416,7 +416,7 @@ body {
     margin: 5px 0 0 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
 
     .banner,
     .banner * {
