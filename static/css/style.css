@@ -424,6 +424,11 @@ body {
         --bs-gutter-x: 0;
     }
 
+    * {
+        outline: 1px solid red;
+    }
+}
+
     .text-light-long {
         flex-direction: column;
         align-items: center;
