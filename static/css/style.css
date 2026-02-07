@@ -417,7 +417,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    
+
     .text-light-long {
         flex-direction: column;
         align-items: center;
@@ -503,7 +503,19 @@ body {
     .product-card p {
         font-size: 0.9rem;
     }
+
     .text-light-large {
     display: none;
+
+    .subtitulo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .subtitulo a {
+        display: inline-block;
+        text-align: center;
+    }
 }
 }
