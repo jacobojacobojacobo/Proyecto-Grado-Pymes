@@ -497,4 +497,7 @@ body {
     .product-card p {
         font-size: 0.9rem;
     }
+    .text-light-large {
+    display: none;
+}
 }
