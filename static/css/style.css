@@ -418,13 +418,23 @@ body {
 
 @media (max-width: 768px) {
 
+    .banner,
+    .banner * {
+        box-sizing: border-box;
+    }
+
     .banner {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
         padding-left: 0%;
     }
+    
     .banner-image {
         margin-top: 12px;
         flex-direction: column;
         align-items: center;
+        display: block;
     }
 
     .promo-grid {
