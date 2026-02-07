@@ -119,10 +119,6 @@ body {
 
 /* ====== MOBILE ====== */
 @media (max-width: 768px) {
-    .navbar-links {
-        display: none;
-    }
-
     .navbar-search input {
         width: 140px;
     }
