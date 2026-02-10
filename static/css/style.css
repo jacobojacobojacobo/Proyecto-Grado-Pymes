@@ -475,6 +475,10 @@ body {
         height: auto;
     }
 
+    .subtitulo {
+        display: none;
+    }
+
     .subtitulo a {
         margin-bottom: 10px;
         padding-right: 10;
@@ -502,11 +506,6 @@ body {
 
     .text-light-large {
     display: none;
-
-    .subtitulo {
-        display: none;
-    }
-
 
 }
 }
