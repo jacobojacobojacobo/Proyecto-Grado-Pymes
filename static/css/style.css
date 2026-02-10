@@ -420,6 +420,10 @@ body {
         text-align: center;
     }
 
+    .text-light-small {
+    margin-top: 2px;
+    }
+
     .banner,
     .banner * {
         box-sizing: border-box;
