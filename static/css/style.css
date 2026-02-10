@@ -504,15 +504,9 @@ body {
     display: none;
 
     .subtitulo {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+        display: none;
     }
 
-    .subtitulo a {
-        display: inline-block;
-        text-align: center;
-    }
 
 }
 }
